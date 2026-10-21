@@ -1,0 +1,68 @@
+package com.delivery.livestream_service.entity;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+@Getter
+@Setter
+@Entity
+@Table(name = "livestream_products")
+public class LivestreamProduct {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "livestream_id", nullable = false)
+    private UUID livestreamId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "livestream_id", insertable = false, updatable = false)
+    private Livestream livestream;
+
+    @Column(name = "product_id", nullable = false)
+    private Long productId;
+
+    @Column(name = "product_name")
+    private String productName;
+
+    @Column(name = "product_image", columnDefinition = "TEXT")
+    private String productImage;
+
+    @Column(name = "restaurant_id")
+    private Long restaurantId;
+
+    @Column(name = "restaurant_name")
+    private String restaurantName;
+
+    @Column(name = "price_at_live", precision = 12, scale = 2)
+    private BigDecimal priceAtLive;
+
+    @Column(name = "is_pinned", nullable = false)
+    private Boolean isPinned = false;
+
+    @Column(name = "created_at", nullable = false, updatable = false)
+    private LocalDateTime createdAt;
+
+    @Column(name = "pinned_at")
+    private LocalDateTime pinnedAt;
+
+    @Column(name = "deleted_at")
+    private LocalDateTime deletedAt;
+
+    @Column(name = "deleted_by_principal_id")
+    private Long deletedByPrincipalId;
+
+    @Column(name = "deletion_reason")
+    private String deletionReason;
+
+    @PrePersist
+    protected void onCreate() {
+        createdAt = LocalDateTime.now();
+    }
+}

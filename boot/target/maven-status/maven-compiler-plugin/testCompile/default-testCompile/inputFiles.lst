@@ -1,0 +1,6 @@
+/Users/a/Documents/private/delivery/backend_delivery/livestream/boot/src/test/java/com/delivery/livestream_service/LivestreamServiceApplicationTests.java
+/Users/a/Documents/private/delivery/backend_delivery/livestream/boot/src/test/java/com/delivery/livestream_service/checkout/LivestreamCheckoutReceiptIntegrationTest.java
+/Users/a/Documents/private/delivery/backend_delivery/livestream/boot/src/test/java/com/delivery/livestream_service/checkout/LivestreamCheckoutReceiptPostgresIntegrationTest.java
+/Users/a/Documents/private/delivery/backend_delivery/livestream/boot/src/test/java/com/delivery/livestream_service/migration/LivestreamMigrationSchemaValidationTest.java
+/Users/a/Documents/private/delivery/backend_delivery/livestream/boot/src/test/java/com/delivery/livestream_service/service/LivestreamLifecycleTransactionTest.java
+/Users/a/Documents/private/delivery/backend_delivery/livestream/boot/src/test/java/com/delivery/livestream_service/service/LivestreamModerationIntegrationTest.java
